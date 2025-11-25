@@ -110,9 +110,30 @@
     color: var(--text-color);
 }
 
-@media (max-width: 768px) {
+/* Mobile Menu Overlay */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 1024px) {
     .hamburger {
         display: block;
+        z-index: 1001;
     }
 
     .contact-btn {
@@ -123,14 +144,16 @@
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%;
+        width: 280px;
         height: 100vh;
-        background: var(--bg-color);
+        background: var(--card-bg);
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: right 0.3s ease;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+        z-index: 999;
+        border-left: 1px solid var(--border-color);
     }
 
     .nav-menu.active {
@@ -140,6 +163,13 @@
     .nav-menu ul {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
+        gap: 35px;
+        width: 100%;
+    }
+
+    .nav-menu a {
+        font-size: 1.2rem;
+        display: block;
+        padding: 10px;
     }
 }

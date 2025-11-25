@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="footer-col">
                     <h3>Shyam.</h3>
-                    <p>UI/UX Designer & Developer</p>
+                    <p>Software Engineer</p>
                 </div>
 
                 <div className="footer-col">
@@ -28,7 +28,7 @@ const Footer = () => {
 
                 <div className="footer-col">
                     <h4>Social</h4>
-                    <a href="https://github.com/shyam">GitHub</a>
+                    <a href="https://github.com/ShyamCoder2024" target="_blank" rel="noopener noreferrer">GitHub</a>
                     <a href="https://www.linkedin.com/in/shyam-mangaonkar-bb8b58229/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     <a href="https://twitter.com/shyam">Twitter</a>
                     <a href="https://www.instagram.com/shyam_mangaonkar?igsh=MXdvZXQyMHozcnh2dQ==" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -36,7 +36,7 @@ const Footer = () => {
             </div>
 
             <div className="footer-bottom">
-                <p>Copyright &copy; 2024 by Shyam Sudhir Mangaonkar | All Rights Reserved.</p>
+                <p>Copyright &copy; 2024 by SHYAM MANGAONKAR | All Rights Reserved.</p>
                 <div className="footer-iconTop">
                     <a onClick={scrollToTop}><FaArrowUp /></a>
                 </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaLinkedinIn, FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
 
@@ -73,7 +73,7 @@ const Contact = () => {
 
                     <div className="contact-card">
                         <div className="card-icon">
-                            <FaPhone />
+                            <FaPhoneAlt />
                         </div>
                         <h3>Call Me</h3>
                         <a href="tel:+918459311191">+91-8459311191</a>
@@ -158,7 +158,7 @@ const Contact = () => {
                     <a href="https://www.linkedin.com/in/shyam-mangaonkar-bb8b58229/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <FaLinkedinIn />
                     </a>
-                    <a href="https://github.com/shyam" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <a href="https://github.com/ShyamCoder2024" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <FaGithub />
                     </a>
                 </div>

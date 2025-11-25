@@ -15,14 +15,14 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <h3>Hello, It's Me</h3>
-                    <h1>Shyam Sudhir Mangaonkar</h1>
+                    <h1>SHYAM MANGAONKAR</h1>
                     <h2>And I'm a <span>Software Engineer</span></h2>
                     <p>
                         Full Stack Developer specializing in React.js, Node.js, Express, and MongoDB, building fast, scalable, and user-focused web applications. I leverage Generative AI, automation, and modern development workflows to accelerate delivery and create production-ready solutions. Backed by a strong foundation in Data Structures & Algorithms, I write clean, optimized code and integrate AI tools to solve real-world problems and deliver measurable impact.
                     </p>
 
                     <div className="social-icons">
-                        <a href="https://github.com/shyam" style={{ '--i': 1 }}><FaGithub /></a>
+                        <a href="https://github.com/ShyamCoder2024" target="_blank" rel="noopener noreferrer" style={{ '--i': 1 }}><FaGithub /></a>
                         <a href="https://www.linkedin.com/in/shyam-mangaonkar-bb8b58229/" target="_blank" rel="noopener noreferrer" style={{ '--i': 2 }}><FaLinkedin /></a>
                         <a href="https://twitter.com/shyam" style={{ '--i': 3 }}><FaTwitter /></a>
                         <a href="https://www.instagram.com/shyam_mangaonkar?igsh=MXdvZXQyMHozcnh2dQ==" target="_blank" rel="noopener noreferrer" style={{ '--i': 4 }}><FaInstagram /></a>

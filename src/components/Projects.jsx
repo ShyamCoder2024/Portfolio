@@ -4,6 +4,10 @@ import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import './Projects.css';
 import scaleonImage from '../assets/scaleon-project.jpg';
 import instaledImage from '../assets/instaled-project.jpg';
+import meetpuneImage from '../assets/meetpune-project.jpg';
+import studystreamImage from '../assets/studystream-project.jpg';
+import talenthuntImage from '../assets/talenthunt-project.jpg';
+import leadgenImage from '../assets/leadgen-project.jpg';
 
 const Projects = () => {
     const projects = [
@@ -26,7 +30,7 @@ const Projects = () => {
         {
             title: 'MeetPune',
             description: 'Video Conferencing App, React, Socket.io, Node.js, MongoDB',
-            image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            image: meetpuneImage,
             tags: ['React', 'Socket.io', 'WebRTC'],
             github: '#',
             demo: '#'
@@ -34,7 +38,7 @@ const Projects = () => {
         {
             title: 'StudyStream',
             description: 'Educational Platform for Online Learning',
-            image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            image: studystreamImage,
             tags: ['React', 'Education', 'Platform'],
             github: '#',
             demo: '#'
@@ -42,7 +46,7 @@ const Projects = () => {
         {
             title: 'TalentHunt',
             description: 'Recruitment Platform connecting talent with opportunities',
-            image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            image: talenthuntImage,
             tags: ['React', 'Recruitment', 'MERN'],
             github: '#',
             demo: '#'
@@ -50,7 +54,7 @@ const Projects = () => {
         {
             title: 'LeadGen & CRM Automation',
             description: 'Business Automation Tool for lead generation and customer management',
-            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            image: leadgenImage,
             tags: ['Automation', 'CRM', 'Analytics'],
             github: '#',
             demo: '#'

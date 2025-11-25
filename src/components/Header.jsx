@@ -21,6 +21,15 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Lock body scroll when menu is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [isOpen]);
+
     const navLinks = [
         { name: 'Home', href: '#home' },
         { name: 'About', href: '#about' },
@@ -33,9 +42,10 @@ const Header = () => {
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className="container">
                 <div className="logo">
-                    <a href="#home">Shyam<span>.</span></a>
+                    <a href="#home">SHYAM<span>.</span></a>
                 </div>
 
+                <div className={`nav-overlay ${isOpen ? 'active' : ''}`} onClick={() => setIsOpen(false)}></div>
                 <nav className={`nav-menu ${isOpen ? 'active' : ''}`}>
                     <ul>
                         {navLinks.map((link, index) => (
