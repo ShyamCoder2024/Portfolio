@@ -33,7 +33,7 @@ const Projects = () => {
             image: meetpuneImage,
             tags: ['React', 'Socket.io', 'WebRTC'],
             github: '#',
-            demo: '#'
+            demo: 'https://chat-application-pink-three.vercel.app/login'
         },
         {
             title: 'StudyStream',
