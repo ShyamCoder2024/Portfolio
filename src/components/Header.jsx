@@ -5,7 +5,7 @@ import './Header.css';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+    const [scrolled, setScrolled] = useState(window.scrollY > 50);
     const { isDark, toggleTheme } = useTheme();
 
     useEffect(() => {
