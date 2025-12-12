@@ -39,7 +39,7 @@ const Hero = () => {
                     <motion.h1 variants={itemVariants}>SHYAM MANGAONKAR</motion.h1>
                     <motion.h2 variants={itemVariants}>And I'm a <span>Software Engineer</span></motion.h2>
                     <motion.p variants={itemVariants}>
-                        Full Stack Developer specializing in React.js, Node.js, Express, and MongoDB, building fast, scalable, and user-focused web applications. I leverage Generative AI, automation, and modern development workflows to accelerate delivery and create production-ready solutions. Backed by a strong foundation in Data Structures & Algorithms, I write clean, optimized code and integrate AI tools to solve real-world problems and deliver measurable impact.
+                        Full-stack and AI-driven developer skilled in React.js, Node.js, and MongoDB. I build scalable applications and integrate Generative AI and automation to deliver production-ready, high-impact solutions. Backed by strong DSA skills, I write clean, optimized code that solves real-world problems.
                     </motion.p>
 
                     <motion.div className="social-icons" variants={itemVariants}>
