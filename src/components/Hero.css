@@ -22,21 +22,17 @@
     flex: 1;
 }
 
+/* Removed CSS animations in favor of Framer Motion */
+
 .hero-content h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    opacity: 0;
-    animation: slideBottom 1s ease forwards;
-    animation-delay: .7s;
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin: 10px 0;
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
-    animation-delay: 1s;
 }
 
 .hero-content h2 {
@@ -46,9 +42,6 @@
     text-align: left;
     left: 0;
     transform: none;
-    opacity: 0;
-    animation: slideTop 1s ease forwards;
-    animation-delay: 1.3s;
 }
 
 .hero-content h2::after {
@@ -64,9 +57,6 @@
     margin-bottom: 30px;
     max-width: 600px;
     color: var(--text-secondary);
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: 1.6s;
 }
 
 .social-icons {
@@ -79,28 +69,29 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    /* Improved touch target */
+    height: 48px;
+    /* Improved touch target */
     background: transparent;
     border: 2px solid var(--accent-color);
     border-radius: 50%;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--accent-color);
-    transition: .5s ease;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: calc(.2s * var(--i));
+    transition: .3s ease;
 }
 
 .social-icons a:hover {
     background: var(--accent-color);
     color: var(--bg-color);
     box-shadow: 0 0 20px var(--accent-color);
+    transform: scale(1.1);
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 14px 32px;
+    /* Improved touch target */
     background: var(--accent-color);
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -108,10 +99,7 @@
     color: var(--bg-color);
     letter-spacing: 1px;
     font-weight: 600;
-    transition: .5s ease;
-    opacity: 0;
-    animation: slideTop 1s ease forwards;
-    animation-delay: 2s;
+    transition: .3s ease;
 }
 
 .btn:hover {
@@ -139,54 +127,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-@keyframes slideRight {
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideLeft {
-    0% {
-        transform: translateX(100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideTop {
-    0% {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideBottom {
-    0% {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 
 /* Tablet */

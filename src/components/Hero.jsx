@@ -1,8 +1,29 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import './Hero.css';
 import profileImg from '../assets/profile.jpg';
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.3
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.6, ease: "easeOut" }
+    }
+};
 
 const Hero = () => {
     return (
@@ -10,25 +31,33 @@ const Hero = () => {
             <div className="hero-container">
                 <motion.div
                     className="hero-content"
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
                 >
-                    <h3>Hello, It's Me</h3>
-                    <h1>SHYAM MANGAONKAR</h1>
-                    <h2>And I'm a <span>Software Engineer</span></h2>
-                    <p>
+                    <motion.h3 variants={itemVariants}>Hello, It's Me</motion.h3>
+                    <motion.h1 variants={itemVariants}>SHYAM MANGAONKAR</motion.h1>
+                    <motion.h2 variants={itemVariants}>And I'm a <span>Software Engineer</span></motion.h2>
+                    <motion.p variants={itemVariants}>
                         Full Stack Developer specializing in React.js, Node.js, Express, and MongoDB, building fast, scalable, and user-focused web applications. I leverage Generative AI, automation, and modern development workflows to accelerate delivery and create production-ready solutions. Backed by a strong foundation in Data Structures & Algorithms, I write clean, optimized code and integrate AI tools to solve real-world problems and deliver measurable impact.
-                    </p>
+                    </motion.p>
 
-                    <div className="social-icons">
-                        <a href="https://github.com/ShyamCoder2024" target="_blank" rel="noopener noreferrer" style={{ '--i': 1 }}><FaGithub /></a>
-                        <a href="https://www.linkedin.com/in/shyam-mangaonkar-bb8b58229/" target="_blank" rel="noopener noreferrer" style={{ '--i': 2 }}><FaLinkedin /></a>
-                        <a href="https://twitter.com/shyam" style={{ '--i': 3 }}><FaTwitter /></a>
-                        <a href="https://www.instagram.com/shyam_mangaonkar?igsh=MXdvZXQyMHozcnh2dQ==" target="_blank" rel="noopener noreferrer" style={{ '--i': 4 }}><FaInstagram /></a>
-                    </div>
+                    <motion.div className="social-icons" variants={itemVariants}>
+                        <a href="https://github.com/ShyamCoder2024" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+                        <a href="https://www.linkedin.com/in/shyam-mangaonkar-bb8b58229/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+                        <a href="https://www.instagram.com/shyam_mangaonkar?igsh=MXdvZXQyMHozcnh2dQ==" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                    </motion.div>
 
-                    <a href="/Shyam_Mangaonkar_CV.pdf" download="Shyam_Mangaonkar_CV.pdf" className="btn">Download CV</a>
+                    <motion.a
+                        href="/Shyam_Mangaonkar_CV.pdf"
+                        download="Shyam_Mangaonkar_CV.pdf"
+                        className="btn"
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        Download CV
+                    </motion.a>
                 </motion.div>
 
                 <motion.div

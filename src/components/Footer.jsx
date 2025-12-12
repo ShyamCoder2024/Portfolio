@@ -30,7 +30,6 @@ const Footer = () => {
                     <h4>Social</h4>
                     <a href="https://github.com/ShyamCoder2024" target="_blank" rel="noopener noreferrer">GitHub</a>
                     <a href="https://www.linkedin.com/in/shyam-mangaonkar-bb8b58229/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://twitter.com/shyam">Twitter</a>
                     <a href="https://www.instagram.com/shyam_mangaonkar?igsh=MXdvZXQyMHozcnh2dQ==" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </div>
             </div>
