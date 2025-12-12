@@ -29,13 +29,7 @@ const About = () => {
                 >
                     <h3>Software Engineer</h3>
                     <p>
-                        I am a passionate UI/UX Designer and Developer with a strong background in building responsive and user-friendly websites.
-                        I love to create designs that are not only visually appealing but also provide a seamless user experience.
-                        With expertise in React, JavaScript, and modern CSS frameworks, I bring ideas to life through code.
-                    </p>
-                    <p>
-                        My journey in web development started with a curiosity for how things work on the internet, and it has evolved into a career
-                        where I constantly learn and adapt to new technologies. I am always open to new opportunities and collaborations.
+                        Full Stack Developer specializing in React.js, Node.js, Express, and MongoDB, building fast, scalable, and user-focused web applications. I leverage Generative AI, automation, and modern development workflows to accelerate delivery and create production-ready solutions. Backed by a strong foundation in Data Structures & Algorithms, I write clean, optimized code and integrate AI tools to solve real-world problems and deliver measurable impact.
                     </p>
                     <a href="#contact" className="btn">Read More</a>
                 </motion.div>
