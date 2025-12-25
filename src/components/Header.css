@@ -158,7 +158,10 @@
     }
 
     .hamburger {
-        display: block;
+        display: block !important;
+        color: var(--text-color) !important;
+        position: relative;
+        z-index: 1002;
     }
 
     .contact-btn {
