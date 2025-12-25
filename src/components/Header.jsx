@@ -10,7 +10,7 @@ const Header = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 50 || window.innerWidth <= 1024) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
@@ -18,7 +18,15 @@ const Header = () => {
         };
 
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleScroll);
+
+        // Initial check
+        handleScroll();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleScroll);
+        };
     }, []);
 
     // Lock body scroll when menu is open
