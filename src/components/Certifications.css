@@ -14,9 +14,11 @@
 
 .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .certification-card {
@@ -117,31 +119,15 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-    .certifications-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .certifications-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 25px;
+        padding: 0 15px;
     }
 
     .certification-card {
         padding: 25px;
-    }
-
-    .cert-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
-
-    .cert-content h3 {
-        font-size: 1.2rem;
     }
 
     .cert-link {
@@ -156,5 +142,10 @@
 
     .certification-card {
         padding: 20px;
+    }
+
+    .cert-icon {
+        width: 50px;
+        height: 50px;
     }
 }
