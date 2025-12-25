@@ -6,7 +6,7 @@ import './Projects.css';
 import scaleonImage from '../assets/scaleon-project.jpg';
 import instaledImage from '../assets/instaled-project.jpg';
 import meetpuneImage from '../assets/meetpune-project.jpg';
-import studystreamImage from '../assets/studystream-project.jpg';
+import studyWiseBankingImage from '../assets/StudyWiseBanking.jpg';
 import talenthuntImage from '../assets/talenthunt-project.jpg';
 import leadgenImage from '../assets/leadgen-project.jpg';
 
@@ -37,9 +37,9 @@ const Projects = () => {
             demo: 'https://chat-application-pink-three.vercel.app/login'
         },
         {
-            title: 'StudyStream',
+            title: 'StudyWiseBanking',
             description: 'Educational Platform for Online Learning',
-            image: studystreamImage,
+            image: studyWiseBankingImage,
             tags: ['React', 'Education', 'Platform'],
             github: '#',
             demo: '#'
