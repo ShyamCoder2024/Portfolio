@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import './Projects.css';
 import scaleonImage from '../assets/scaleon-project.jpg';
-import instaledImage from '../assets/instaled-project.jpg';
+
 import meetpuneImage from '../assets/meetpune-project.jpg';
 import studyWiseBankingImage from '../assets/StudyWiseBanking.jpg';
 import talenthuntImage from '../assets/talenthunt-project.jpg';
-import leadgenImage from '../assets/leadgen-project.jpg';
+
 
 const Projects = () => {
     const projects = [
@@ -20,14 +20,7 @@ const Projects = () => {
             github: '#',
             demo: 'https://scaleon-grow-build.vercel.app/'
         },
-        {
-            title: 'InstaLED',
-            description: 'IoT LED Controller, React Native, Arduino, Bluetooth Integration',
-            image: instaledImage,
-            tags: ['React Native', 'IoT', 'Arduino'],
-            github: '#',
-            demo: '#'
-        },
+
         {
             title: 'MeetPune',
             description: 'Video Conferencing App, React, Socket.io, Node.js, MongoDB',
@@ -52,14 +45,7 @@ const Projects = () => {
             github: '#',
             demo: '#'
         },
-        {
-            title: 'LeadGen & CRM Automation',
-            description: 'Business Automation Tool for lead generation and customer management',
-            image: leadgenImage,
-            tags: ['Automation', 'CRM', 'Analytics'],
-            github: '#',
-            demo: '#'
-        }
+
     ];
 
     return (
