@@ -42,7 +42,7 @@ const Projects = () => {
             image: studyWiseBankingImage,
             tags: ['React', 'Education', 'Platform'],
             github: '#',
-            demo: '#'
+            demo: 'https://studywise-banking-site.vercel.app/login'
         },
         {
             title: 'TalentHunt',
