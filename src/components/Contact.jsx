@@ -74,7 +74,7 @@ const Contact = () => {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
             >
-                Let's Work <span>Together</span>
+                Get In <span>Touch</span>
             </motion.h2>
 
             <div className="contact-layout">
@@ -87,7 +87,7 @@ const Contact = () => {
                     viewport={{ once: true }}
                 >
                     <p className="contact-intro">
-                        Have a project in mind? Let's discuss how we can collaborate to bring your ideas to life.
+                        I'm actively seeking opportunities to contribute my skills. Whether you're hiring or just want to chat about tech, I'd love to hear from you!
                     </p>
 
                     <div className="info-items">

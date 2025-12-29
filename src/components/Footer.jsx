@@ -22,11 +22,11 @@ const Footer = () => {
                 viewport={{ once: true }}
             >
                 <h2 className="cta-headline">
-                    Have an Awesome Idea?<br />
-                    Let's Work Together
+                    Looking for a Passionate Developer?<br />
+                    Let's Connect
                 </h2>
                 <a href="#contact" className="btn-primary cta-btn">
-                    Get In Touch
+                    Hire Me
                     <span className="arrow-icon"><FaArrowRight /></span>
                 </a>
             </motion.div>
