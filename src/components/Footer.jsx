@@ -35,7 +35,6 @@ const Footer = () => {
             <div className="footer-main">
                 <div className="footer-left">
                     <h3 className="footer-logo">SHYAM<span>.</span></h3>
-                    <p className="footer-tagline">Full-Stack Developer</p>
                 </div>
 
                 <div className="footer-right">
