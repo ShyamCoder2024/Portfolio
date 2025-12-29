@@ -5,7 +5,13 @@ import './Header.css';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(window.scrollY > 50);
+    const [scrolled, setScrolled] = useState(() => {
+        // Initialize scrolled to true on mobile to prevent burger menu from being cut off on initial render
+        if (typeof window !== 'undefined') {
+            return window.scrollY > 50 || window.innerWidth <= 1024;
+        }
+        return false;
+    });
     const { isDark, toggleTheme } = useTheme();
 
     useEffect(() => {
