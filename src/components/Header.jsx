@@ -71,8 +71,16 @@ const Header = () => {
                 </nav>
 
                 <div className="header-right">
-                    <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
-                        {isDark ? <FaSun /> : <FaMoon />}
+                    <button
+                        className={`theme-toggle ${isDark ? 'dark' : 'light'}`}
+                        onClick={toggleTheme}
+                        aria-label="Toggle theme"
+                    >
+                        <span className="toggle-track">
+                            <span className="toggle-thumb">
+                                {isDark ? <FaSun /> : <FaMoon />}
+                            </span>
+                        </span>
                     </button>
                     <a href="#contact" className="header-cta">
                         Let's Talk

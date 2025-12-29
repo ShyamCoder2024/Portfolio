@@ -22,6 +22,11 @@
     text-align: center;
     text-transform: none;
     letter-spacing: normal;
+    width: 100%;
+    display: block;
+    position: static;
+    left: auto;
+    transform: none;
 }
 
 .cta-headline::after {
