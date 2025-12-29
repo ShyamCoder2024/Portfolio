@@ -33,40 +33,28 @@ const Footer = () => {
 
             {/* Footer Content */}
             <div className="footer-main">
-                <div className="footer-brand">
-                    <h3>Shyam.</h3>
-                    <p>Crafting digital experiences with precision & creativity - let's build something extraordinary.</p>
+                <div className="footer-left">
+                    <h3 className="footer-logo">SHYAM<span>.</span></h3>
+                    <p className="footer-tagline">Full-Stack Developer</p>
                 </div>
 
-                <div className="footer-links">
-                    <div className="footer-col">
-                        <h4>Main Page</h4>
-                        <a href="#home">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#skills">Skills</a>
-                    </div>
-
+                <div className="footer-right">
                     <div className="footer-col">
                         <h4>Social</h4>
                         <a href="https://github.com/ShyamCoder2024" target="_blank" rel="noopener noreferrer">GitHub</a>
                         <a href="https://www.linkedin.com/in/shyam-mangaonkar-bb8b58229/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a href="https://www.instagram.com/shyam_mangaonkar?igsh=MXdvZXQyMHozcnh2dQ==" target="_blank" rel="noopener noreferrer">Instagram</a>
                     </div>
 
                     <div className="footer-col">
                         <h4>Contact</h4>
-                        <a href="mailto:your@email.com">Email</a>
-                        <a href="https://wa.me/your-number">WhatsApp</a>
+                        <a href="mailto:shyammangaonkar330@gmail.com">Email</a>
+                        <a href="https://wa.me/918459311191">WhatsApp</a>
                     </div>
                 </div>
 
-                <div className="footer-back-top">
-                    <button onClick={scrollToTop} className="back-top-btn">
-                        <FaArrowUp />
-                    </button>
-                    <span>Back to Top</span>
-                </div>
+                <button onClick={scrollToTop} className="back-top-btn desktop-only">
+                    <FaArrowUp />
+                </button>
             </div>
 
             {/* Footer Bottom */}
