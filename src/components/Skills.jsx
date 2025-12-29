@@ -1,80 +1,63 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { FaCheckCircle } from 'react-icons/fa';
 import './Skills.css';
 
 const Skills = () => {
-    const skillCategories = [
-        {
-            category: 'Frontend',
-            skills: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Next.js', 'Tailwind CSS']
-        },
-        {
-            category: 'Backend',
-            skills: ['Node.js', 'Express.js', 'REST APIs', 'Socket.IO']
-        },
-        {
-            category: 'Database',
-            skills: ['MongoDB']
-        },
-        {
-            category: 'Automation & AI',
-            skills: ['n8n', 'AI Agents', 'Prompt Engineering', 'RAG Pipelines', 'Document Automation']
-        },
-        {
-            category: 'Tools',
-            skills: ['Git', 'GitHub', 'Postman', 'VS Code']
-        },
-        {
-            category: 'Cloud & Deployment',
-            skills: ['Vercel', 'Render', 'Railway', 'Netlify']
-        },
-        {
-            category: 'Other Skills',
-            skills: ['SaaS Development', 'Real-time Apps', 'CRM & Automation Workflows', 'API Integrations']
-        }
+    const skills = [
+        // Core Development
+        'React.js', 'Next.js', 'Node.js', 'Express.js', 'MongoDB',
+        // Languages & Styling
+        'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS',
+        // Real-time & APIs
+        'REST APIs', 'Socket.IO', 'WebRTC',
+        // AI & Automation
+        'Generative AI', 'n8n', 'AI Agents', 'RAG Pipelines',
+        // DevOps & Tools
+        'Git', 'GitHub', 'Vercel', 'Docker',
+        // Domains
+        'SaaS Development', 'Real-time Apps', 'API Integrations'
     ];
 
     return (
         <section id="skills" className="skills">
-            <h2 className="heading">Skills & <span>Technologies</span></h2>
-            <p className="skills-description">
-                Technologies and tools I work with to build modern applications
-            </p>
+            <motion.div
+                className="skills-header"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+            >
+                <div className="section-label">Skills</div>
+                <h2 className="skills-title">
+                    Technologies I <span>Work With</span>
+                </h2>
+                <p className="skills-tagline">
+                    Building modern, scalable applications with cutting-edge tools
+                </p>
+            </motion.div>
 
-            <div className="skills-categories">
-                {skillCategories.map((category, categoryIndex) => (
-                    <motion.div
-                        className="skill-category"
-                        key={categoryIndex}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+            <motion.div
+                className="skills-cloud"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+            >
+                {skills.map((skill, index) => (
+                    <motion.span
+                        className="skill-tag"
+                        key={index}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, delay: index * 0.03 }}
                         viewport={{ once: true }}
+                        whileHover={{ scale: 1.05 }}
                     >
-                        <h3 className="category-title">{category.category}</h3>
-                        <div className="category-skills">
-                            {category.skills.map((skill, skillIndex) => (
-                                <motion.div
-                                    className="skill-badge"
-                                    key={skillIndex}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.3, delay: (categoryIndex * 0.1) + (skillIndex * 0.05) }}
-                                    viewport={{ once: true }}
-                                    whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                                >
-                                    <span className="skill-badge-icon" style={{ color: '#6366f1' }}>
-                                        <FaCheckCircle />
-                                    </span>
-                                    <span className="skill-badge-name">{skill}</span>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
+                        {skill}
+                    </motion.span>
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 };
