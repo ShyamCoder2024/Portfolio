@@ -49,7 +49,7 @@ const Hero = () => {
                     </motion.div>
 
                     <motion.a
-                        href="/Shyam_Mangaonkar_CV.pdf"
+                        href="/shyam-3.pdf"
                         download="Shyam_Mangaonkar_CV.pdf"
                         className="btn"
                         variants={itemVariants}
