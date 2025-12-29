@@ -7,7 +7,7 @@ import profileImg from '../assets/profile.jpg';
 
 const About = () => {
     const stats = [
-        { number: '1+', label: 'Year Experience' },
+        { number: '1', label: 'Year Experience' },
         { number: '20+', label: 'Projects Completed' },
         { number: '90%', label: 'Client Satisfaction' },
         { number: '20+', label: 'Technologies' },
