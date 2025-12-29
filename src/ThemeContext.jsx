@@ -19,7 +19,6 @@ export const ThemeProvider = ({ children }) => {
         }
         return window.matchMedia('(prefers-color-scheme: dark)').matches;
     });
-    const [isTransitioning, setIsTransitioning] = useState(false);
 
     useEffect(() => {
         const theme = isDark ? 'dark' : 'light';
@@ -28,31 +27,27 @@ export const ThemeProvider = ({ children }) => {
     }, [isDark]);
 
     const toggleTheme = useCallback(() => {
-        // Add transitioning class for smooth fade
-        setIsTransitioning(true);
+        // Add transitioning class for smooth color transitions
+        document.documentElement.classList.add('theme-transitioning');
 
-        // Small delay for fade effect
+        // Toggle theme
+        setIsDark(prev => {
+            const newTheme = !prev;
+            const theme = newTheme ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            document.documentElement.setAttribute('data-theme', theme);
+            return newTheme;
+        });
+
+        // Remove transitioning class after animation completes
         setTimeout(() => {
-            setIsDark(prev => {
-                const newTheme = !prev;
-                const theme = newTheme ? 'dark' : 'light';
-                localStorage.setItem('theme', theme);
-                document.documentElement.setAttribute('data-theme', theme);
-                return newTheme;
-            });
-
-            // Remove transition after theme change
-            setTimeout(() => {
-                setIsTransitioning(false);
-            }, 150);
-        }, 150);
+            document.documentElement.classList.remove('theme-transitioning');
+        }, 600);
     }, []);
 
     return (
-        <ThemeContext.Provider value={{ isDark, toggleTheme, isTransitioning }}>
+        <ThemeContext.Provider value={{ isDark, toggleTheme }}>
             {children}
-            {/* Premium Theme Transition Overlay */}
-            <div className={`theme-transition-overlay ${isTransitioning ? 'active' : ''}`} />
         </ThemeContext.Provider>
     );
 };

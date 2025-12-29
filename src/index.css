@@ -43,9 +43,20 @@ body {
   font-family: var(--font-main);
   line-height: 1.6;
   overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth Theme Transition - applies during theme change */
+.theme-transitioning,
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition: background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease,
+    fill 0.5s ease !important;
 }
 
 a {
@@ -294,38 +305,6 @@ button {
 /* ========================================
    PREMIUM ANIMATIONS & TRANSITIONS
    ======================================== */
-
-/* Theme Transition Overlay */
-.theme-transition-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--bg-color);
-  pointer-events: none;
-  opacity: 0;
-  z-index: 9999;
-  transition: opacity 0.4s ease;
-}
-
-.theme-transition-overlay.active {
-  opacity: 1;
-}
-
-/* Smooth Global Transitions */
-*,
-*::before,
-*::after {
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
-}
-
-/* Disable transition during theme change for performance */
-.theme-changing * {
-  transition-duration: 0s !important;
-}
 
 /* Premium Link Hover Effects */
 a:not(.btn-primary):not(.social-icons a):not(.header-cta) {
