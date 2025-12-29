@@ -290,3 +290,154 @@ button {
     font-size: 2rem;
   }
 }
+
+/* ========================================
+   PREMIUM ANIMATIONS & TRANSITIONS
+   ======================================== */
+
+/* Theme Transition Overlay */
+.theme-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 9999;
+  transition: opacity 0.4s ease;
+}
+
+.theme-transition-overlay.active {
+  opacity: 1;
+}
+
+/* Smooth Global Transitions */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+/* Disable transition during theme change for performance */
+.theme-changing * {
+  transition-duration: 0s !important;
+}
+
+/* Premium Link Hover Effects */
+a:not(.btn-primary):not(.social-icons a):not(.header-cta) {
+  position: relative;
+}
+
+/* Smooth Card Hover */
+.project-card,
+.cert-card,
+.skill-card,
+.contact-card {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s ease;
+}
+
+/* Premium Button Micro-interactions */
+.btn-primary {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Smooth Scroll Snap for Mobile */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section {
+    scroll-snap-align: start;
+  }
+}
+
+/* Page Load Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Pulse Animation for Attention */
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Smooth Image Loading */
+img {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+img[loading] {
+  opacity: 0;
+}
+
+/* Focus States for Accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Mobile Touch Feedback */
+@media (hover: none) {
+
+  .btn-primary:active,
+  .project-card:active,
+  .cert-card:active,
+  .skill-card:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+}
+
+/* Reduce Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
