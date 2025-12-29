@@ -47,14 +47,24 @@ const Projects = () => {
     return (
         <section id="projects" className="projects">
             <motion.div
+                className="section-label"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
+                Projects
+            </motion.div>
+
+            <motion.div
                 className="projects-header"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
             >
                 <h2 className="projects-title">
-                    Featured <span>Projects</span>
+                    Featured <span>Work</span>
                 </h2>
                 <p className="projects-tagline">
                     A showcase of projects that demonstrate my skills in building
