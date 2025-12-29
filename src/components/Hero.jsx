@@ -1,7 +1,7 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaArrowRight } from 'react-icons/fa';
 import './Hero.css';
 import profileImg from '../assets/profile.jpg';
 
@@ -35,11 +35,11 @@ const Hero = () => {
                     initial="hidden"
                     animate="visible"
                 >
-                    <motion.h3 variants={itemVariants}>Hello, It's Me</motion.h3>
-                    <motion.h1 variants={itemVariants}>SHYAM MANGAONKAR</motion.h1>
+                    <motion.p className="hero-greeting" variants={itemVariants}>Hello, It's Me</motion.p>
+                    <motion.h1 variants={itemVariants}>SHYAM<br />MANGAONKAR</motion.h1>
                     <motion.h2 variants={itemVariants}>And I'm a <span>Software Engineer</span></motion.h2>
-                    <motion.p variants={itemVariants}>
-                        Full-stack and AI-driven developer skilled in React.js, Node.js, and MongoDB. I build scalable applications and integrate Generative AI and automation to deliver production-ready, high-impact solutions. Backed by strong DSA skills, I write clean, optimized code that solves real-world problems.
+                    <motion.p className="hero-desc" variants={itemVariants}>
+                        Full-stack and AI-driven developer skilled in React.js, Node.js, and MongoDB. I build scalable applications and integrate Generative AI and automation to deliver production-ready, high-impact solutions.
                     </motion.p>
 
                     <motion.div className="social-icons" variants={itemVariants}>
@@ -51,12 +51,13 @@ const Hero = () => {
                     <motion.a
                         href="/shyam-3.pdf"
                         download="Shyam_Mangaonkar_CV.pdf"
-                        className="btn"
+                        className="btn-primary"
                         variants={itemVariants}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
                     >
                         Download CV
+                        <span className="arrow-icon"><FaArrowRight /></span>
                     </motion.a>
                 </motion.div>
 
