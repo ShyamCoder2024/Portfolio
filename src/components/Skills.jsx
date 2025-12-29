@@ -4,60 +4,68 @@ import { motion } from 'framer-motion';
 import './Skills.css';
 
 const Skills = () => {
-    const skills = [
-        // Core Development
-        'React.js', 'Next.js', 'Node.js', 'Express.js', 'MongoDB',
-        // Languages & Styling
-        'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS',
-        // Real-time & APIs
-        'REST APIs', 'Socket.IO', 'WebRTC',
-        // AI & Automation
-        'Generative AI', 'n8n', 'AI Agents', 'RAG Pipelines',
-        // DevOps & Tools
-        'Git', 'GitHub', 'Vercel', 'Docker',
-        // Domains
-        'SaaS Development', 'Real-time Apps', 'API Integrations'
+    const skillGroups = [
+        {
+            title: 'Frontend',
+            items: ['React.js', 'Next.js', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind']
+        },
+        {
+            title: 'Backend',
+            items: ['Node.js', 'Express.js', 'REST APIs', 'Socket.IO', 'MongoDB']
+        },
+        {
+            title: 'AI & Automation',
+            items: ['Generative AI', 'n8n', 'AI Agents', 'RAG Pipelines']
+        },
+        {
+            title: 'DevOps',
+            items: ['Git', 'GitHub', 'Vercel', 'Docker', 'CI/CD']
+        }
     ];
 
     return (
         <section id="skills" className="skills">
             <motion.div
-                className="skills-header"
-                initial={{ opacity: 0, y: 30 }}
+                className="section-label"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
             >
-                <div className="section-label">Skills</div>
-                <h2 className="skills-title">
-                    Technologies I <span>Work With</span>
-                </h2>
-                <p className="skills-tagline">
-                    Building modern, scalable applications with cutting-edge tools
-                </p>
+                Skills
             </motion.div>
 
-            <motion.div
-                className="skills-cloud"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+            <motion.h2
+                className="skills-title"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
             >
-                {skills.map((skill, index) => (
-                    <motion.span
-                        className="skill-tag"
-                        key={index}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3, delay: index * 0.03 }}
+                My <span>Tech Stack</span>
+            </motion.h2>
+
+            <div className="skills-grid">
+                {skillGroups.map((group, groupIndex) => (
+                    <motion.div
+                        className="skill-group"
+                        key={groupIndex}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: groupIndex * 0.1 }}
                         viewport={{ once: true }}
-                        whileHover={{ scale: 1.05 }}
                     >
-                        {skill}
-                    </motion.span>
+                        <h3 className="skill-group-title">{group.title}</h3>
+                        <div className="skill-list">
+                            {group.items.map((skill, skillIndex) => (
+                                <span className="skill-item" key={skillIndex}>
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </motion.div>
                 ))}
-            </motion.div>
+            </div>
         </section>
     );
 };
