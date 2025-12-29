@@ -126,29 +126,51 @@
     .cert-title {
         font-size: 1rem;
     }
+
+    .cert-btn {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* Responsive - Mobile */
 @media (max-width: 480px) {
     .certifications-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        margin-bottom: 35px;
     }
 
     .cert-card {
-        padding: 18px;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .cert-header {
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .cert-logo-box {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
+        padding: 6px;
+    }
+
+    .cert-year {
+        font-size: 0.75rem;
+        padding: 4px 10px;
     }
 
     .cert-title {
         font-size: 0.95rem;
     }
 
+    .cert-issuer {
+        font-size: 0.85rem;
+    }
+
     .cert-btn {
-        width: 100%;
-        justify-content: center;
+        padding: 10px 16px;
+        font-size: 0.8rem;
     }
 }
