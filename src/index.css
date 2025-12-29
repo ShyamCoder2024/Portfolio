@@ -145,3 +145,117 @@ button {
     font-size: 2rem;
   }
 }
+
+/* ========================================
+   DESIGN SYSTEM - Consistent Components
+   ======================================== */
+
+/* Section Label Badge (■ ABOUT style) */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* Primary Button (Black bg + accent arrow) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--text-color);
+  color: var(--bg-color);
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary .arrow-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  color: var(--bg-color);
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .arrow-icon {
+  transform: translateX(3px);
+}
+
+/* Highlight Text (Bold emphasis) */
+.highlight-text {
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* Stats Row */
+.stats-row {
+  display: flex;
+  gap: 30px;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.stat-item {
+  text-align: left;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+/* Responsive Stats */
+@media (max-width: 768px) {
+  .stats-row {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .stat-item {
+    flex: 1 1 calc(50% - 15px);
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+}
