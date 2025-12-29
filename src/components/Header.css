@@ -67,8 +67,9 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    min-width: 120px;
-    /* Reserve space to prevent layout shift */
+    min-width: 0;
+    /* Allow shrinking on mobile */
+    flex-shrink: 0;
     justify-content: flex-end;
 }
 
@@ -128,6 +129,12 @@
     color: var(--text-color);
     z-index: 1001;
     /* Ensure above overlay */
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /* Prevent the element from being squeezed or cut off */
 }
 
 /* Mobile Menu Overlay */
@@ -158,7 +165,7 @@
     }
 
     .hamburger {
-        display: block !important;
+        display: flex !important;
         color: var(--text-color) !important;
         position: relative;
         z-index: 1002;
