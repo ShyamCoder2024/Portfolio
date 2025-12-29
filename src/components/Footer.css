@@ -20,6 +20,8 @@
     margin-bottom: 30px;
     color: var(--text-color);
     text-align: center;
+    text-transform: none;
+    letter-spacing: normal;
 }
 
 .cta-headline::after {
