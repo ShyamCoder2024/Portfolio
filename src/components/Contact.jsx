@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { FaLinkedinIn, FaGithub, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion';
+import { FaLinkedinIn, FaGithub, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
 
@@ -28,7 +30,6 @@ const Contact = () => {
         setSuccess(false);
 
         try {
-            // EmailJS configuration - User needs to replace these with their own values
             const serviceId = 'YOUR_SERVICE_ID';
             const templateId = 'YOUR_TEMPLATE_ID';
             const publicKey = 'YOUR_PUBLIC_KEY';
@@ -56,112 +57,129 @@ const Contact = () => {
 
     return (
         <section id="contact" className="contact">
-            <h2 className="heading">Let's Work <span>Together</span></h2>
-            <p className="contact-subtitle">
-                Have a project in mind? Let's discuss how we can collaborate to bring your ideas to life.
-            </p>
+            <motion.div
+                className="section-label"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+            >
+                Contact
+            </motion.div>
 
-            <div className="contact-wrapper">
-                <div className="contact-cards">
-                    <div className="contact-card">
-                        <div className="card-icon">
-                            <FaEnvelope />
+            <motion.h2
+                className="contact-title"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+            >
+                Let's Work <span>Together</span>
+            </motion.h2>
+
+            <div className="contact-layout">
+                {/* Contact Info */}
+                <motion.div
+                    className="contact-info"
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                >
+                    <p className="contact-intro">
+                        Have a project in mind? Let's discuss how we can collaborate to bring your ideas to life.
+                    </p>
+
+                    <div className="info-items">
+                        <div className="info-item">
+                            <div className="info-icon"><FaEnvelope /></div>
+                            <div className="info-text">
+                                <span className="info-label">Email</span>
+                                <a href="mailto:shyammangaonkar330@gmail.com">shyammangaonkar330@gmail.com</a>
+                            </div>
                         </div>
-                        <h3>Email Me</h3>
-                        <a href="mailto:shyammangaonkar330@gmail.com">shyammangaonkar330@gmail.com</a>
+
+                        <div className="info-item">
+                            <div className="info-icon"><FaPhoneAlt /></div>
+                            <div className="info-text">
+                                <span className="info-label">Phone</span>
+                                <a href="tel:+918459311191">+91-8459311191</a>
+                            </div>
+                        </div>
+
+                        <div className="info-item">
+                            <div className="info-icon"><FaMapMarkerAlt /></div>
+                            <div className="info-text">
+                                <span className="info-label">Location</span>
+                                <span>Pune, Maharashtra, India</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="contact-card">
-                        <div className="card-icon">
-                            <FaPhoneAlt />
-                        </div>
-                        <h3>Call Me</h3>
-                        <a href="tel:+918459311191">+91-8459311191</a>
+                    <div className="social-row">
+                        <a href="https://www.linkedin.com/in/shyam-mangaonkar-bb8b58229/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+                        <a href="https://github.com/ShyamCoder2024" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
                     </div>
+                </motion.div>
 
-                    <div className="contact-card">
-                        <div className="card-icon">
-                            <FaMapMarkerAlt />
-                        </div>
-                        <h3>Location</h3>
-                        <p>Pune, Maharashtra, India</p>
-                    </div>
-                </div>
-
-                <div className="contact-form-section">
-                    <h3>Send Me a Message</h3>
-
+                {/* Contact Form */}
+                <motion.div
+                    className="contact-form-box"
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                >
                     {success && (
                         <div className="success-message">
-                            ✓ Message sent successfully! I'll get back to you soon.
+                            ✓ Message sent successfully!
                         </div>
                     )}
 
                     {error && (
-                        <div className="error-message">
-                            {error}
-                        </div>
+                        <div className="error-message">{error}</div>
                     )}
 
                     <form className="contact-form" onSubmit={handleSubmit}>
                         <div className="form-row">
-                            <div className="form-group">
-                                <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Your Name *"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </div>
-                            <div className="form-group">
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Your Email *"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </div>
-                        </div>
-                        <div className="form-group">
                             <input
                                 type="text"
-                                name="subject"
-                                placeholder="Subject"
-                                value={formData.subject}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <textarea
-                                rows="6"
-                                name="message"
-                                placeholder="Your Message *"
-                                value={formData.message}
+                                name="name"
+                                placeholder="Name *"
+                                value={formData.name}
                                 onChange={handleChange}
                                 required
-                            ></textarea>
+                            />
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Email *"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
                         </div>
-                        <button type="submit" className="submit-btn" disabled={loading}>
+                        <input
+                            type="text"
+                            name="subject"
+                            placeholder="Subject"
+                            value={formData.subject}
+                            onChange={handleChange}
+                        />
+                        <textarea
+                            rows="5"
+                            name="message"
+                            placeholder="Message *"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                        ></textarea>
+                        <button type="submit" className="btn-primary" disabled={loading}>
                             {loading ? 'Sending...' : 'Send Message'}
+                            {!loading && <span className="arrow-icon"><FaArrowRight /></span>}
                         </button>
                     </form>
-                </div>
-            </div>
-
-            <div className="social-connect">
-                <h3>Connect With Me</h3>
-                <div className="social-links">
-                    <a href="https://www.linkedin.com/in/shyam-mangaonkar-bb8b58229/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <FaLinkedinIn />
-                    </a>
-                    <a href="https://github.com/ShyamCoder2024" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <FaGithub />
-                    </a>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
