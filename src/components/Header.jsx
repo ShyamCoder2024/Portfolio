@@ -72,14 +72,12 @@ const Header = () => {
 
                 <div className="header-right">
                     <button
-                        className={`theme-toggle ${isDark ? 'dark' : 'light'}`}
+                        className={`theme-toggle ${isDark ? 'dark' : ''}`}
                         onClick={toggleTheme}
                         aria-label="Toggle theme"
                     >
-                        <span className="toggle-track">
-                            <span className="toggle-thumb">
-                                {isDark ? <FaSun /> : <FaMoon />}
-                            </span>
+                        <span className="toggle-icon">
+                            {isDark ? <FaSun /> : <FaMoon />}
                         </span>
                     </button>
                     <a href="#contact" className="header-cta">
