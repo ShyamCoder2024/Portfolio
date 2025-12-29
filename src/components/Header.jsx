@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaMoon, FaSun } from 'react-icons/fa';
+import { FaBars, FaTimes, FaMoon, FaSun, FaArrowRight } from 'react-icons/fa';
 import { useTheme } from '../ThemeContext';
 import './Header.css';
 
@@ -74,7 +74,10 @@ const Header = () => {
                     <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
                         {isDark ? <FaSun /> : <FaMoon />}
                     </button>
-                    <a href="#contact" className="contact-btn">Let's Talk</a>
+                    <a href="#contact" className="header-cta">
+                        Let's Talk
+                        <span className="arrow-icon"><FaArrowRight /></span>
+                    </a>
                     <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
                         {isOpen ? <FaTimes /> : <FaBars />}
                     </div>

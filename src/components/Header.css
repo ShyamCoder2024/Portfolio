@@ -105,21 +105,41 @@
     transform: rotate(180deg);
 }
 
-.contact-btn {
-    background: var(--accent-color);
+/* Header CTA Button - Consistent with btn-primary */
+.header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--text-color);
     color: var(--bg-color);
-    padding: 10px 25px;
+    padding: 10px 20px;
     border-radius: 30px;
     font-weight: 600;
-    font-size: 0.9rem;
-    transition: 0.3s;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
     white-space: nowrap;
-    /* Prevent text wrapping */
 }
 
-.contact-btn:hover {
-    opacity: 0.9;
+.header-cta:hover {
     transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header-cta .arrow-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    color: var(--bg-color);
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.header-cta:hover .arrow-icon {
+    transform: translateX(2px);
 }
 
 .hamburger {
@@ -171,7 +191,7 @@
         z-index: 1002;
     }
 
-    .contact-btn {
+    .header-cta {
         display: none;
     }
 
