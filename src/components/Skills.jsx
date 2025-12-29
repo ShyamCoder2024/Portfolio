@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Skills.css';
 
-// Import skill logos
+// Import all skill logos
 import reactLogo from '../assets/skills/react.png';
 import nodejsLogo from '../assets/skills/nodejs.png';
 import mongodbLogo from '../assets/skills/mongodb.png';
@@ -12,6 +12,14 @@ import nextjsLogo from '../assets/skills/nextjs.png';
 import tailwindLogo from '../assets/skills/tailwind.png';
 import dockerLogo from '../assets/skills/docker.png';
 import gitLogo from '../assets/skills/git.png';
+import expressjsLogo from '../assets/skills/expressjs.png';
+import restapiLogo from '../assets/skills/restapi.png';
+import socketioLogo from '../assets/skills/socketio.png';
+import genaiLogo from '../assets/skills/genai.png';
+import n8nLogo from '../assets/skills/n8n.png';
+import vercelLogo from '../assets/skills/vercel.png';
+import githubLogo from '../assets/skills/github.png';
+import saasLogo from '../assets/skills/saas.png';
 
 const Skills = () => {
     const skills = [
@@ -23,14 +31,14 @@ const Skills = () => {
         { name: 'Tailwind', logo: tailwindLogo },
         { name: 'Docker', logo: dockerLogo },
         { name: 'Git', logo: gitLogo },
-        { name: 'Express.js', logo: null },
-        { name: 'REST APIs', logo: null },
-        { name: 'Socket.IO', logo: null },
-        { name: 'Generative AI', logo: null },
-        { name: 'n8n', logo: null },
-        { name: 'Vercel', logo: null },
-        { name: 'GitHub', logo: null },
-        { name: 'SaaS', logo: null },
+        { name: 'Express.js', logo: expressjsLogo },
+        { name: 'REST APIs', logo: restapiLogo },
+        { name: 'Socket.IO', logo: socketioLogo },
+        { name: 'Gen AI', logo: genaiLogo },
+        { name: 'n8n', logo: n8nLogo },
+        { name: 'Vercel', logo: vercelLogo },
+        { name: 'GitHub', logo: githubLogo },
+        { name: 'SaaS', logo: saasLogo },
     ];
 
     return (
@@ -72,23 +80,17 @@ const Skills = () => {
                         key={index}
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3, delay: index * 0.05 }}
+                        transition={{ duration: 0.3, delay: index * 0.04 }}
                         viewport={{ once: true }}
                         whileHover={{
-                            scale: 1.05,
-                            y: -5,
+                            scale: 1.08,
+                            y: -8,
                             transition: { duration: 0.2 }
                         }}
                     >
-                        {skill.logo ? (
-                            <div className="skill-logo">
-                                <img src={skill.logo} alt={skill.name} />
-                            </div>
-                        ) : (
-                            <div className="skill-icon">
-                                {skill.name.charAt(0)}
-                            </div>
-                        )}
+                        <div className="skill-logo">
+                            <img src={skill.logo} alt={skill.name} />
+                        </div>
                         <span className="skill-name">{skill.name}</span>
                     </motion.div>
                 ))}
