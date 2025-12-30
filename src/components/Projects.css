@@ -45,13 +45,11 @@
     margin: 1.5rem auto 0;
 }
 
-/* Single Column Layout for Rich Cards */
+/* Grid Layout - 2 columns on desktop */
 .projects-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    max-width: 900px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
 }
 
 /* Card Styles */
@@ -61,20 +59,21 @@
     overflow: hidden;
     border: 1px solid var(--border-color);
     transition: all 0.4s ease;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     border-color: var(--accent-color);
+    transform: translateY(-5px);
 }
 
 /* Image Container */
 .project-image {
     position: relative;
     overflow: hidden;
-    min-height: 300px;
+    aspect-ratio: 16/10;
 }
 
 .project-image img {
@@ -90,21 +89,22 @@
 
 /* Card Content */
 .project-content {
-    padding: 30px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
+    flex: 1;
 }
 
 /* Project Header */
 .project-header {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
 }
 
 .project-name {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--text-color);
     margin: 0;
@@ -113,74 +113,74 @@
 }
 
 .project-hook {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--accent-color);
     font-weight: 500;
     margin: 0;
     line-height: 1.4;
 }
 
-/* Story Section */
+/* Story Section - Compact */
 .project-story {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .story-item {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
 }
 
 .story-label {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: var(--text-secondary);
 }
 
 .story-item p {
-    font-size: 0.88rem;
-    line-height: 1.5;
+    font-size: 0.85rem;
+    line-height: 1.45;
     color: var(--text-color);
     margin: 0;
 }
 
-/* Engineering Section */
+/* Engineering Section - Compact */
 .engineering-section {
     background: var(--bg-color);
-    padding: 14px 16px;
-    border-radius: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
     border: 1px solid var(--border-color);
 }
 
 .engineering-label {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: var(--accent-color);
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .engineering-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 12px;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .engineering-list li {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-color);
-    padding-left: 14px;
+    padding-left: 12px;
     position: relative;
-    line-height: 1.4;
+    line-height: 1.35;
 }
 
 .engineering-list li::before {
@@ -188,32 +188,32 @@
     position: absolute;
     left: 0;
     color: var(--accent-color);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
 }
 
 /* Tech Tags */
 .project-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 5px;
 }
 
 .tech-tag {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 600;
     color: var(--text-color);
     background: rgba(255, 77, 0, 0.08);
-    padding: 5px 12px;
+    padding: 4px 10px;
     border-radius: 20px;
     border: 1px solid rgba(255, 77, 0, 0.2);
 }
 
 /* Impact */
 .project-impact {
-    font-size: 0.85rem;
-    line-height: 1.5;
+    font-size: 0.82rem;
+    line-height: 1.4;
     color: var(--text-secondary);
-    padding-top: 12px;
+    padding-top: 10px;
     border-top: 1px solid var(--border-color);
 }
 
@@ -227,23 +227,24 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 22px;
+    padding: 10px 18px;
     background: var(--text-color);
     color: var(--bg-color);
-    border-radius: 30px;
-    font-size: 0.85rem;
+    border-radius: 25px;
+    font-size: 0.8rem;
     font-weight: 600;
     transition: all 0.3s ease;
     align-self: flex-start;
+    margin-top: auto;
 }
 
 .project-view-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .project-view-btn svg {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 }
 
 /* CTA Button */
@@ -255,26 +256,20 @@
 
 /* Responsive - Tablet */
 @media (max-width: 900px) {
-    .project-card {
-        grid-template-columns: 1fr;
-    }
-
-    .project-image {
-        min-height: 220px;
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
 
     .project-content {
-        padding: 25px;
-    }
-
-    .engineering-list {
-        grid-template-columns: 1fr;
+        padding: 20px;
     }
 }
 
 /* Responsive - Mobile */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .projects-grid {
+        grid-template-columns: 1fr;
         gap: 30px;
     }
 
@@ -282,43 +277,34 @@
         font-size: 1.8rem;
     }
 
-    .project-image {
-        min-height: 180px;
-    }
-
     .project-content {
         padding: 20px;
-        gap: 14px;
+        gap: 12px;
     }
 
     .project-name {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
     }
 
     .project-hook {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
     }
 
     .story-item p {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
     }
 
     .engineering-section {
-        padding: 12px 14px;
+        padding: 10px 12px;
     }
 
     .engineering-list li {
-        font-size: 0.78rem;
+        font-size: 0.72rem;
     }
 
     .tech-tag {
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         padding: 3px 8px;
-    }
-
-    .project-view-btn {
-        padding: 10px 18px;
-        font-size: 0.82rem;
     }
 
     .projects-cta {

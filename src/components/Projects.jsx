@@ -11,54 +11,49 @@ const Projects = () => {
     const projects = [
         {
             title: 'ScaleOn Technologies',
-            hook: 'AI-powered automation agency platform with integrated workflow engines and client management.',
-            problem: 'Small businesses waste hours on repetitive operations because most AI tools are fragmented, expensive, and require technical expertise to deploy.',
-            solution: 'Built a full-stack agency platform that delivers AI agents and automation workflows as managed services—enabling businesses to automate operations without building internal tech teams.',
+            hook: 'AI-powered automation platform with workflow engines.',
+            problem: 'Small businesses waste hours on repetitive operations—most AI tools are fragmented and require technical expertise.',
+            solution: 'Built a full-stack agency platform delivering AI agents and automation workflows as managed services.',
             engineering: [
-                'JWT-based authentication with role separation (Admin/Client)',
-                'RESTful API architecture for workflow management',
-                'AI agent integration for document processing & analysis',
-                'Admin dashboard with client analytics and service tracking',
-                'Modular automation engine for reusable workflow templates'
+                'JWT auth with Admin/Client roles',
+                'RESTful APIs for workflows',
+                'AI agent integration',
+                'Admin analytics dashboard'
             ],
-            tech: ['React.js', 'Node.js', 'MongoDB', 'REST APIs', 'JWT Auth', 'AI Integration', 'Admin Dashboard'],
-            impact: 'Enables non-technical businesses to adopt AI automation with zero infrastructure overhead.',
+            tech: ['React.js', 'Node.js', 'MongoDB', 'REST APIs', 'JWT', 'AI'],
+            impact: 'Enables non-technical businesses to adopt AI automation.',
             image: scaleonImage,
             demo: 'https://scaleon-grow-build.vercel.app/'
         },
         {
             title: 'Meet Pune',
-            hook: 'Real-time communication platform with encrypted messaging, WebSocket connections, and user authentication.',
-            problem: 'Existing city discovery apps lack real-time interaction—users cannot connect, share recommendations, or communicate instantly with locals.',
-            solution: 'Developed a full-stack real-time platform combining city discovery with secure instant messaging, enabling users to explore places and connect with others simultaneously.',
+            hook: 'Real-time platform with encrypted messaging & WebSockets.',
+            problem: 'City discovery apps lack real-time interaction—users cannot connect or communicate instantly.',
+            solution: 'Developed a full-stack real-time platform combining city discovery with secure instant messaging.',
             engineering: [
-                'Socket.io implementation for real-time bidirectional communication',
-                'AES-256 encryption for secure message handling',
-                'JWT authentication with protected route middleware',
-                'RESTful APIs for user management and content delivery',
-                'MongoDB aggregation pipelines for location-based queries',
-                'Session management with automatic reconnection handling'
+                'Socket.io real-time communication',
+                'AES-256 message encryption',
+                'JWT protected routes',
+                'MongoDB aggregations'
             ],
-            tech: ['React.js', 'Node.js', 'Socket.io', 'MongoDB', 'JWT Auth', 'AES Encryption', 'REST APIs', 'WebSockets'],
-            impact: 'Demonstrates production-grade real-time systems with end-to-end security implementation.',
+            tech: ['React.js', 'Node.js', 'Socket.io', 'MongoDB', 'JWT', 'AES'],
+            impact: 'Production-grade real-time system with end-to-end security.',
             image: meetpuneImage,
             demo: 'https://chat-application-pink-three.vercel.app/login'
         },
         {
             title: 'StudyWise Banking',
-            hook: 'Full-stack learning management system with AI-driven performance analysis and personalized study paths.',
-            problem: 'Banking exam aspirants struggle with generic study content that fails to adapt to individual learning gaps, leading to low engagement and poor preparation outcomes.',
-            solution: 'Engineered an AI-powered LMS that tracks student performance, identifies weak topics through data analysis, and generates personalized learning recommendations with curated resources.',
+            hook: 'AI-driven LMS with personalized learning paths.',
+            problem: 'Banking exam aspirants struggle with generic content that fails to adapt to individual learning gaps.',
+            solution: 'Engineered an AI-powered LMS tracking performance and generating personalized recommendations.',
             engineering: [
-                'JWT authentication with separate User/Admin role systems',
-                'RESTful API design for quiz engine and progress tracking',
-                'AI-based performance analysis with strength/weakness mapping',
-                'Admin dashboard for student monitoring and content management',
-                'MongoDB schema design for hierarchical course structures',
-                'Automated recommendation engine using learning analytics'
+                'JWT User/Admin role systems',
+                'REST APIs for quiz engine',
+                'AI performance analysis',
+                'Admin student dashboard'
             ],
-            tech: ['React.js', 'Node.js', 'MongoDB', 'REST APIs', 'JWT Auth', 'AI Analysis', 'Admin Dashboard', 'Full-Stack'],
-            impact: 'Improves student retention and content utilization through data-driven, adaptive learning paths.',
+            tech: ['React.js', 'Node.js', 'MongoDB', 'REST APIs', 'JWT', 'AI'],
+            impact: 'Improves student retention through adaptive learning paths.',
             image: studyWiseBankingImage,
             demo: 'https://studywise-banking-site.vercel.app/login'
         }
@@ -87,7 +82,7 @@ const Projects = () => {
                     Featured <span>Work</span>
                 </h2>
                 <p className="projects-tagline">
-                    Production-grade systems built with real backend architecture, security, and scalability.
+                    Production-grade systems with real backend architecture and security.
                 </p>
             </motion.div>
 
