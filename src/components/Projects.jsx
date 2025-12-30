@@ -1,47 +1,44 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { FaExternalLinkAlt, FaGithub, FaArrowRight } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaArrowRight } from 'react-icons/fa';
 import './Projects.css';
 import scaleonImage from '../assets/scaleon-project.jpg';
 import meetpuneImage from '../assets/meetpune-project.jpg';
 import studyWiseBankingImage from '../assets/StudyWiseBanking.jpg';
-import talenthuntImage from '../assets/talenthunt-project.jpg';
 
 const Projects = () => {
     const projects = [
         {
             title: 'ScaleOn Technologies',
-            year: '2024',
-            tags: ['MERN Stack', 'AI-Powered', 'SaaS'],
+            subtitle: 'AI Agents & Automation Solutions',
+            problem: 'SMBs struggle to adopt AI due to high costs, lack of expertise, and fragmented tools.',
+            solution: 'Built a scalable agency platform with AI agents, automation workflows, and SaaS solutions to streamline business operations.',
+            tech: ['AI Agents', 'Automation', 'Web Dev', 'Product Design'],
+            outcome: 'Helps clients save time, reduce friction, and adopt AI practically.',
             image: scaleonImage,
-            github: null,
             demo: 'https://scaleon-grow-build.vercel.app/'
         },
         {
-            title: 'MeetPune',
-            year: '2024',
-            tags: ['React', 'Socket.io', 'WebRTC'],
+            title: 'Meet Pune',
+            subtitle: 'City Discovery Platform',
+            problem: 'People struggle to discover local places and events in Pune—info is scattered across social media and blogs.',
+            solution: 'Created a centralized city discovery platform with structured navigation and fast-loading pages.',
+            tech: ['React.js', 'JavaScript', 'Scalable UI', 'Modern Frontend'],
+            outcome: 'Demonstrates turning a local problem into a scalable digital product.',
             image: meetpuneImage,
-            github: null,
             demo: 'https://chat-application-pink-three.vercel.app/login'
         },
         {
-            title: 'StudyWiseBanking',
-            year: '2024',
-            tags: ['React', 'Education', 'Platform'],
+            title: 'StudyWise Banking',
+            subtitle: 'AI-Driven Learning Platform',
+            problem: 'Banking exam aspirants lose motivation and lack personalized guidance after enrollment.',
+            solution: 'Built a full-stack learning system with AI-based performance analysis and personalized study recommendations.',
+            tech: ['React.js', 'Node.js', 'AI Analysis', 'Full-Stack'],
+            outcome: 'Improves student engagement and learning outcomes through data-driven prep.',
             image: studyWiseBankingImage,
-            github: null,
             demo: 'https://studywise-banking-site.vercel.app/login'
-        },
-        {
-            title: 'TalentHunt',
-            year: '2024',
-            tags: ['React', 'Recruitment', 'MERN'],
-            image: talenthuntImage,
-            github: null,
-            demo: null
-        },
+        }
     ];
 
     return (
@@ -67,8 +64,7 @@ const Projects = () => {
                     Featured <span>Work</span>
                 </h2>
                 <p className="projects-tagline">
-                    A showcase of projects that demonstrate my skills in building
-                    modern, scalable web applications.
+                    Real-world projects solving real problems with modern technology.
                 </p>
             </motion.div>
 
@@ -84,31 +80,44 @@ const Projects = () => {
                     >
                         <div className="project-image">
                             <img src={project.image} alt={project.title} />
-                            <div className="project-overlay">
-                                <div className="overlay-links">
-                                    {project.github && (
-                                        <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                                            <FaGithub />
-                                        </a>
-                                    )}
-                                    {project.demo && (
-                                        <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label="Live Demo">
-                                            <FaExternalLinkAlt />
-                                        </a>
-                                    )}
+                            {project.demo && (
+                                <a
+                                    href={project.demo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="project-link"
+                                    aria-label="View Live"
+                                >
+                                    <FaExternalLinkAlt />
+                                </a>
+                            )}
+                        </div>
+
+                        <div className="project-content">
+                            <div className="project-header">
+                                <h3 className="project-name">{project.title}</h3>
+                                <span className="project-subtitle">{project.subtitle}</span>
+                            </div>
+
+                            <div className="project-story">
+                                <div className="story-item">
+                                    <span className="story-label">Problem</span>
+                                    <p>{project.problem}</p>
+                                </div>
+                                <div className="story-item">
+                                    <span className="story-label">Solution</span>
+                                    <p>{project.solution}</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="project-content">
-                            <h3 className="project-name">{project.title}</h3>
-                            <div className="project-meta">
-                                <span className="project-year">{project.year}</span>
-                                {project.tags.map((tag, idx) => (
-                                    <React.Fragment key={idx}>
-                                        <span className="meta-separator">•</span>
-                                        <span className="project-tag">{tag}</span>
-                                    </React.Fragment>
+
+                            <div className="project-tech">
+                                {project.tech.map((t, idx) => (
+                                    <span key={idx} className="tech-tag">{t}</span>
                                 ))}
+                            </div>
+
+                            <div className="project-outcome">
+                                <span className="outcome-label">Impact:</span> {project.outcome}
                             </div>
                         </div>
                     </motion.div>
