@@ -39,7 +39,7 @@ const Hero = () => {
                     <motion.h1 variants={itemVariants}>SHYAM<br />MANGAONKAR</motion.h1>
                     <motion.h2 variants={itemVariants}>And I'm a <span>Software Engineer</span></motion.h2>
                     <motion.p className="hero-desc" variants={itemVariants}>
-                        <strong>Full-stack</strong> and <strong>AI-driven developer</strong> skilled in React.js, Node.js, and MongoDB. I build <strong>scalable applications</strong> and integrate <strong>Generative AI</strong> and automation to deliver production-ready, <strong>high-impact solutions</strong>.
+                        <strong>I build production-ready web products</strong> and intelligent systems that solve real-world problems. As a full-stack engineer, I work across <strong>frontend, backend, and system design</strong> — combining React, Node.js, secure APIs, and AI-driven logic to ship <strong>scalable, reliable solutions</strong> with real impact.
                     </motion.p>
 
                     <motion.div className="social-icons" variants={itemVariants}>
