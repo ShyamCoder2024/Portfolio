@@ -119,6 +119,18 @@ const Projects = () => {
                             <div className="project-outcome">
                                 <span className="outcome-label">Impact:</span> {project.outcome}
                             </div>
+
+                            {project.demo && (
+                                <a
+                                    href={project.demo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="project-view-btn"
+                                >
+                                    View Live
+                                    <FaExternalLinkAlt />
+                                </a>
+                            )}
                         </div>
                     </motion.div>
                 ))}

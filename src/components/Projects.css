@@ -196,14 +196,38 @@
     font-size: 0.85rem;
     line-height: 1.5;
     color: var(--text-secondary);
-    padding-top: 12px;
+    padding-top: 15px;
     border-top: 1px solid var(--border-color);
-    margin-top: auto;
 }
 
 .outcome-label {
     font-weight: 700;
     color: var(--accent-color);
+}
+
+/* View Live Button */
+.project-view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--text-color);
+    color: var(--bg-color);
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.project-view-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-view-btn svg {
+    font-size: 0.75rem;
 }
 
 /* CTA Button */
