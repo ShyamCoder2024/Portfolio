@@ -5,7 +5,7 @@
 /* Header Section */
 .projects-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .projects-title {
@@ -45,17 +45,17 @@
     margin: 1.5rem auto 0;
 }
 
-/* Grid Layout - 2 columns on desktop */
+/* Grid Layout */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
+    gap: 30px;
 }
 
-/* Card Styles */
+/* Card Styles - 50/50 ratio */
 .project-card {
     background: var(--card-bg);
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     border: 1px solid var(--border-color);
     transition: all 0.4s ease;
@@ -66,14 +66,14 @@
 .project-card:hover {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     border-color: var(--accent-color);
-    transform: translateY(-5px);
+    transform: translateY(-4px);
 }
 
-/* Image Container */
+/* Image Container - 50% visual weight */
 .project-image {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 16/10;
+    aspect-ratio: 4/3;
 }
 
 .project-image img {
@@ -87,24 +87,23 @@
     transform: scale(1.03);
 }
 
-/* Card Content */
+/* Card Content - Compact */
 .project-content {
-    padding: 25px;
+    padding: 22px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    flex: 1;
+    gap: 12px;
 }
 
-/* Project Header */
+/* Project Header - Impact as Hero */
 .project-header {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 4px;
 }
 
 .project-name {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--text-color);
     margin: 0;
@@ -112,43 +111,37 @@
     letter-spacing: normal;
 }
 
-.project-hook {
-    font-size: 0.85rem;
+.project-impact {
+    font-size: 0.88rem;
     color: var(--accent-color);
-    font-weight: 500;
+    font-weight: 600;
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
-/* Story Section - Compact */
-.project-story {
+/* Narrative - No Labels */
+.project-narrative {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
-.story-item {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.story-label {
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--text-secondary);
-}
-
-.story-item p {
+.narrative-problem {
     font-size: 0.85rem;
+    font-weight: 600;
     line-height: 1.45;
     color: var(--text-color);
     margin: 0;
 }
 
-/* Engineering Section - Compact */
+.narrative-solution {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Engineering Section - Dark text, checkmarks */
 .engineering-section {
     background: var(--bg-color);
     padding: 12px 14px;
@@ -156,39 +149,39 @@
     border: 1px solid var(--border-color);
 }
 
-.engineering-label {
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--accent-color);
-    display: block;
-    margin-bottom: 8px;
-}
-
 .engineering-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 12px;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .engineering-list li {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     color: var(--text-color);
-    padding-left: 12px;
-    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
     line-height: 1.35;
 }
 
-.engineering-list li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
+.check-icon {
     color: var(--accent-color);
-    font-size: 0.65rem;
+    font-size: 0.6rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+/* Footer - Tags + Button */
+.project-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
 }
 
 /* Tech Tags */
@@ -196,62 +189,49 @@
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    flex: 1;
 }
 
 .tech-tag {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 600;
     color: var(--text-color);
     background: rgba(255, 77, 0, 0.08);
-    padding: 4px 10px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 77, 0, 0.2);
-}
-
-/* Impact */
-.project-impact {
-    font-size: 0.82rem;
-    line-height: 1.4;
-    color: var(--text-secondary);
-    padding-top: 10px;
-    border-top: 1px solid var(--border-color);
-}
-
-.impact-label {
-    font-weight: 700;
-    color: var(--accent-color);
+    padding: 3px 8px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 77, 0, 0.15);
 }
 
 /* View Live Button */
 .project-view-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
+    gap: 6px;
+    padding: 8px 14px;
     background: var(--text-color);
     color: var(--bg-color);
-    border-radius: 25px;
-    font-size: 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
     font-weight: 600;
     transition: all 0.3s ease;
-    align-self: flex-start;
-    margin-top: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .project-view-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
 .project-view-btn svg {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
 }
 
 /* CTA Button */
 .projects-cta {
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 /* Responsive - Tablet */
@@ -262,36 +242,48 @@
     }
 
     .project-content {
-        padding: 20px;
+        padding: 18px;
+    }
+
+    .engineering-list {
+        grid-template-columns: 1fr;
     }
 }
 
-/* Responsive - Mobile */
-@media (max-width: 700px) {
+/* Responsive - Mobile: Tighter spacing, next card visible */
+@media (max-width: 650px) {
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
     }
 
     .projects-title {
         font-size: 1.8rem;
     }
 
+    .project-image {
+        aspect-ratio: 16/10;
+    }
+
     .project-content {
-        padding: 20px;
-        gap: 12px;
+        padding: 16px;
+        gap: 10px;
     }
 
     .project-name {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
     }
 
-    .project-hook {
+    .project-impact {
         font-size: 0.82rem;
     }
 
-    .story-item p {
+    .narrative-problem {
         font-size: 0.82rem;
+    }
+
+    .narrative-solution {
+        font-size: 0.78rem;
     }
 
     .engineering-section {
@@ -299,15 +291,20 @@
     }
 
     .engineering-list li {
-        font-size: 0.72rem;
+        font-size: 0.75rem;
+    }
+
+    .project-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 
     .tech-tag {
-        font-size: 0.68rem;
-        padding: 3px 8px;
+        font-size: 0.65rem;
     }
 
     .projects-cta {
-        margin-top: 40px;
+        margin-top: 35px;
     }
 }

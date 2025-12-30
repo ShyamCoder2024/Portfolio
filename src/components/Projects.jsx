@@ -1,7 +1,7 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { FaExternalLinkAlt, FaArrowRight } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaArrowRight, FaCheck } from 'react-icons/fa';
 import './Projects.css';
 import scaleonImage from '../assets/scaleon-project.jpg';
 import meetpuneImage from '../assets/meetpune-project.jpg';
@@ -11,9 +11,9 @@ const Projects = () => {
     const projects = [
         {
             title: 'ScaleOn Technologies',
-            hook: 'AI-powered automation platform with workflow engines.',
-            problem: 'Small businesses waste hours on repetitive operations—most AI tools are fragmented and require technical expertise.',
-            solution: 'Built a full-stack agency platform delivering AI agents and automation workflows as managed services.',
+            impact: 'Automating operations for SMBs, saving 20+ hours/week',
+            narrative: 'Small businesses are losing hours to manual work because most AI tools are fragmented and require technical expertise.',
+            solution: 'ScaleOn delivers AI agents and automation workflows as managed services—no internal tech team required.',
             engineering: [
                 'JWT auth with Admin/Client roles',
                 'RESTful APIs for workflows',
@@ -21,15 +21,14 @@ const Projects = () => {
                 'Admin analytics dashboard'
             ],
             tech: ['React.js', 'Node.js', 'MongoDB', 'REST APIs', 'JWT', 'AI'],
-            impact: 'Enables non-technical businesses to adopt AI automation.',
             image: scaleonImage,
             demo: 'https://scaleon-grow-build.vercel.app/'
         },
         {
             title: 'Meet Pune',
-            hook: 'Real-time platform with encrypted messaging & WebSockets.',
-            problem: 'City discovery apps lack real-time interaction—users cannot connect or communicate instantly.',
-            solution: 'Developed a full-stack real-time platform combining city discovery with secure instant messaging.',
+            impact: 'Real-time city discovery with encrypted messaging',
+            narrative: 'City discovery apps lack real-time interaction—users cannot connect or communicate instantly with locals.',
+            solution: 'A full-stack platform combining city exploration with secure instant messaging via WebSockets.',
             engineering: [
                 'Socket.io real-time communication',
                 'AES-256 message encryption',
@@ -37,15 +36,14 @@ const Projects = () => {
                 'MongoDB aggregations'
             ],
             tech: ['React.js', 'Node.js', 'Socket.io', 'MongoDB', 'JWT', 'AES'],
-            impact: 'Production-grade real-time system with end-to-end security.',
             image: meetpuneImage,
             demo: 'https://chat-application-pink-three.vercel.app/login'
         },
         {
             title: 'StudyWise Banking',
-            hook: 'AI-driven LMS with personalized learning paths.',
-            problem: 'Banking exam aspirants struggle with generic content that fails to adapt to individual learning gaps.',
-            solution: 'Engineered an AI-powered LMS tracking performance and generating personalized recommendations.',
+            impact: 'AI-powered learning that adapts to each student',
+            narrative: 'Banking exam aspirants struggle with generic content that fails to identify their learning gaps.',
+            solution: 'An LMS that tracks performance, identifies weak topics, and generates personalized study recommendations.',
             engineering: [
                 'JWT User/Admin role systems',
                 'REST APIs for quiz engine',
@@ -53,7 +51,6 @@ const Projects = () => {
                 'Admin student dashboard'
             ],
             tech: ['React.js', 'Node.js', 'MongoDB', 'REST APIs', 'JWT', 'AI'],
-            impact: 'Improves student retention through adaptive learning paths.',
             image: studyWiseBankingImage,
             demo: 'https://studywise-banking-site.vercel.app/login'
         }
@@ -103,50 +100,44 @@ const Projects = () => {
                         <div className="project-content">
                             <div className="project-header">
                                 <h3 className="project-name">{project.title}</h3>
-                                <p className="project-hook">{project.hook}</p>
+                                <p className="project-impact">{project.impact}</p>
                             </div>
 
-                            <div className="project-story">
-                                <div className="story-item">
-                                    <span className="story-label">Problem</span>
-                                    <p>{project.problem}</p>
-                                </div>
-                                <div className="story-item">
-                                    <span className="story-label">Solution</span>
-                                    <p>{project.solution}</p>
-                                </div>
+                            <div className="project-narrative">
+                                <p className="narrative-problem">{project.narrative}</p>
+                                <p className="narrative-solution">{project.solution}</p>
                             </div>
 
                             <div className="engineering-section">
-                                <span className="engineering-label">Engineering Highlights</span>
                                 <ul className="engineering-list">
                                     {project.engineering.map((item, idx) => (
-                                        <li key={idx}>{item}</li>
+                                        <li key={idx}>
+                                            <FaCheck className="check-icon" />
+                                            {item}
+                                        </li>
                                     ))}
                                 </ul>
                             </div>
 
-                            <div className="project-tech">
-                                {project.tech.map((t, idx) => (
-                                    <span key={idx} className="tech-tag">{t}</span>
-                                ))}
-                            </div>
+                            <div className="project-footer">
+                                <div className="project-tech">
+                                    {project.tech.map((t, idx) => (
+                                        <span key={idx} className="tech-tag">{t}</span>
+                                    ))}
+                                </div>
 
-                            <div className="project-impact">
-                                <span className="impact-label">Impact:</span> {project.impact}
+                                {project.demo && (
+                                    <a
+                                        href={project.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="project-view-btn"
+                                    >
+                                        View Live
+                                        <FaExternalLinkAlt />
+                                    </a>
+                                )}
                             </div>
-
-                            {project.demo && (
-                                <a
-                                    href={project.demo}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="project-view-btn"
-                                >
-                                    View Live
-                                    <FaExternalLinkAlt />
-                                </a>
-                            )}
                         </div>
                     </motion.div>
                 ))}
