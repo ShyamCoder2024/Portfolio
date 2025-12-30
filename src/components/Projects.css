@@ -45,14 +45,14 @@
     margin: 1.5rem auto 0;
 }
 
-/* Grid Layout */
+/* Grid Layout - 3 columns */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
-/* Card Styles - 50/50 ratio */
+/* Card Styles */
 .project-card {
     background: var(--card-bg);
     border-radius: 16px;
@@ -69,17 +69,18 @@
     transform: translateY(-4px);
 }
 
-/* Image Container - 50% visual weight */
+/* Image Container - Fixed height, proper fit */
 .project-image {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 4/3;
+    height: 200px;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
     transition: transform 0.5s ease;
 }
 
@@ -262,7 +263,7 @@
     }
 
     .project-image {
-        aspect-ratio: 16/10;
+        height: 180px;
     }
 
     .project-content {
