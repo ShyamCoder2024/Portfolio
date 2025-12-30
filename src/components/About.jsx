@@ -6,13 +6,6 @@ import './About.css';
 import profileImg from '../assets/profile.jpg';
 
 const About = () => {
-    const stats = [
-        { number: '1', label: 'Year Experience' },
-        { number: '20+', label: 'Projects Completed' },
-        { number: '90%', label: 'Client Satisfaction' },
-        { number: '20+', label: 'Technologies' },
-    ];
-
     return (
         <section id="about" className="about">
             <motion.div
@@ -59,22 +52,6 @@ const About = () => {
                         Learn More
                         <span className="arrow-icon"><FaArrowRight /></span>
                     </a>
-
-                    <div className="stats-row">
-                        {stats.map((stat, index) => (
-                            <motion.div
-                                className="stat-item"
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                viewport={{ once: true }}
-                            >
-                                <div className="stat-number">{stat.number}</div>
-                                <div className="stat-label">{stat.label}</div>
-                            </motion.div>
-                        ))}
-                    </div>
                 </motion.div>
             </div>
         </section>
