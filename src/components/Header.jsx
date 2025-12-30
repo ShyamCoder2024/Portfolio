@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaMoon, FaSun, FaArrowRight } from 'react-icons/fa';
-import { useTheme } from '../ThemeContext';
+import { FaBars, FaTimes, FaArrowRight } from 'react-icons/fa';
 import './Header.css';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(() => {
-        // Initialize scrolled to true on mobile to prevent burger menu from being cut off on initial render
         if (typeof window !== 'undefined') {
             return window.scrollY > 50 || window.innerWidth <= 1024;
         }
         return false;
     });
-    const { isDark, toggleTheme } = useTheme();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,8 +22,6 @@ const Header = () => {
 
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', handleScroll);
-
-        // Initial check
         handleScroll();
 
         return () => {
@@ -35,7 +30,6 @@ const Header = () => {
         };
     }, []);
 
-    // Lock body scroll when menu is open
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
@@ -71,15 +65,6 @@ const Header = () => {
                 </nav>
 
                 <div className="header-right">
-                    <button
-                        className={`theme-toggle ${isDark ? 'dark' : ''}`}
-                        onClick={toggleTheme}
-                        aria-label="Toggle theme"
-                    >
-                        <span className="toggle-icon">
-                            {isDark ? <FaSun /> : <FaMoon />}
-                        </span>
-                    </button>
                     <a href="#contact" className="header-cta">
                         Let's Talk
                         <span className="arrow-icon"><FaArrowRight /></span>
