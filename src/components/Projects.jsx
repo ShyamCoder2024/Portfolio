@@ -11,31 +11,54 @@ const Projects = () => {
     const projects = [
         {
             title: 'ScaleOn Technologies',
-            subtitle: 'AI Agents & Automation Solutions',
-            problem: 'SMBs struggle to adopt AI due to high costs, lack of expertise, and fragmented tools.',
-            solution: 'Built a scalable agency platform with AI agents, automation workflows, and SaaS solutions to streamline business operations.',
-            tech: ['AI Agents', 'Automation', 'Web Dev', 'Product Design'],
-            outcome: 'Helps clients save time, reduce friction, and adopt AI practically.',
+            hook: 'AI-powered automation agency platform with integrated workflow engines and client management.',
+            problem: 'Small businesses waste hours on repetitive operations because most AI tools are fragmented, expensive, and require technical expertise to deploy.',
+            solution: 'Built a full-stack agency platform that delivers AI agents and automation workflows as managed services—enabling businesses to automate operations without building internal tech teams.',
+            engineering: [
+                'JWT-based authentication with role separation (Admin/Client)',
+                'RESTful API architecture for workflow management',
+                'AI agent integration for document processing & analysis',
+                'Admin dashboard with client analytics and service tracking',
+                'Modular automation engine for reusable workflow templates'
+            ],
+            tech: ['React.js', 'Node.js', 'MongoDB', 'REST APIs', 'JWT Auth', 'AI Integration', 'Admin Dashboard'],
+            impact: 'Enables non-technical businesses to adopt AI automation with zero infrastructure overhead.',
             image: scaleonImage,
             demo: 'https://scaleon-grow-build.vercel.app/'
         },
         {
             title: 'Meet Pune',
-            subtitle: 'City Discovery Platform',
-            problem: 'People struggle to discover local places and events in Pune—info is scattered across social media and blogs.',
-            solution: 'Created a centralized city discovery platform with structured navigation and fast-loading pages.',
-            tech: ['React.js', 'JavaScript', 'Scalable UI', 'Modern Frontend'],
-            outcome: 'Demonstrates turning a local problem into a scalable digital product.',
+            hook: 'Real-time communication platform with encrypted messaging, WebSocket connections, and user authentication.',
+            problem: 'Existing city discovery apps lack real-time interaction—users cannot connect, share recommendations, or communicate instantly with locals.',
+            solution: 'Developed a full-stack real-time platform combining city discovery with secure instant messaging, enabling users to explore places and connect with others simultaneously.',
+            engineering: [
+                'Socket.io implementation for real-time bidirectional communication',
+                'AES-256 encryption for secure message handling',
+                'JWT authentication with protected route middleware',
+                'RESTful APIs for user management and content delivery',
+                'MongoDB aggregation pipelines for location-based queries',
+                'Session management with automatic reconnection handling'
+            ],
+            tech: ['React.js', 'Node.js', 'Socket.io', 'MongoDB', 'JWT Auth', 'AES Encryption', 'REST APIs', 'WebSockets'],
+            impact: 'Demonstrates production-grade real-time systems with end-to-end security implementation.',
             image: meetpuneImage,
             demo: 'https://chat-application-pink-three.vercel.app/login'
         },
         {
             title: 'StudyWise Banking',
-            subtitle: 'AI-Driven Learning Platform',
-            problem: 'Banking exam aspirants lose motivation and lack personalized guidance after enrollment.',
-            solution: 'Built a full-stack learning system with AI-based performance analysis and personalized study recommendations.',
-            tech: ['React.js', 'Node.js', 'AI Analysis', 'Full-Stack'],
-            outcome: 'Improves student engagement and learning outcomes through data-driven prep.',
+            hook: 'Full-stack learning management system with AI-driven performance analysis and personalized study paths.',
+            problem: 'Banking exam aspirants struggle with generic study content that fails to adapt to individual learning gaps, leading to low engagement and poor preparation outcomes.',
+            solution: 'Engineered an AI-powered LMS that tracks student performance, identifies weak topics through data analysis, and generates personalized learning recommendations with curated resources.',
+            engineering: [
+                'JWT authentication with separate User/Admin role systems',
+                'RESTful API design for quiz engine and progress tracking',
+                'AI-based performance analysis with strength/weakness mapping',
+                'Admin dashboard for student monitoring and content management',
+                'MongoDB schema design for hierarchical course structures',
+                'Automated recommendation engine using learning analytics'
+            ],
+            tech: ['React.js', 'Node.js', 'MongoDB', 'REST APIs', 'JWT Auth', 'AI Analysis', 'Admin Dashboard', 'Full-Stack'],
+            impact: 'Improves student retention and content utilization through data-driven, adaptive learning paths.',
             image: studyWiseBankingImage,
             demo: 'https://studywise-banking-site.vercel.app/login'
         }
@@ -64,7 +87,7 @@ const Projects = () => {
                     Featured <span>Work</span>
                 </h2>
                 <p className="projects-tagline">
-                    Real-world projects solving real problems with modern technology.
+                    Production-grade systems built with real backend architecture, security, and scalability.
                 </p>
             </motion.div>
 
@@ -80,23 +103,12 @@ const Projects = () => {
                     >
                         <div className="project-image">
                             <img src={project.image} alt={project.title} />
-                            {project.demo && (
-                                <a
-                                    href={project.demo}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="project-link"
-                                    aria-label="View Live"
-                                >
-                                    <FaExternalLinkAlt />
-                                </a>
-                            )}
                         </div>
 
                         <div className="project-content">
                             <div className="project-header">
                                 <h3 className="project-name">{project.title}</h3>
-                                <span className="project-subtitle">{project.subtitle}</span>
+                                <p className="project-hook">{project.hook}</p>
                             </div>
 
                             <div className="project-story">
@@ -110,14 +122,23 @@ const Projects = () => {
                                 </div>
                             </div>
 
+                            <div className="engineering-section">
+                                <span className="engineering-label">Engineering Highlights</span>
+                                <ul className="engineering-list">
+                                    {project.engineering.map((item, idx) => (
+                                        <li key={idx}>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+
                             <div className="project-tech">
                                 {project.tech.map((t, idx) => (
                                     <span key={idx} className="tech-tag">{t}</span>
                                 ))}
                             </div>
 
-                            <div className="project-outcome">
-                                <span className="outcome-label">Impact:</span> {project.outcome}
+                            <div className="project-impact">
+                                <span className="impact-label">Impact:</span> {project.impact}
                             </div>
 
                             {project.demo && (
