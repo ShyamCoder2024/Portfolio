@@ -55,6 +55,7 @@ section {
   padding: 100px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 /* Typography System - Clash Display Style */

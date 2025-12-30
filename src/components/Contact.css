@@ -232,12 +232,22 @@
 
 /* Responsive - Mobile */
 @media (max-width: 480px) {
+    .contact {
+        overflow-x: hidden;
+    }
+
     .contact-title {
         font-size: 1.8rem;
     }
 
+    .contact-layout {
+        max-width: 100%;
+        padding: 0 5px;
+    }
+
     .contact-info {
         gap: 25px;
+        max-width: 100%;
     }
 
     .info-icon {
@@ -248,11 +258,15 @@
 
     .contact-form-box {
         padding: 20px;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .contact-form input,
     .contact-form textarea {
         padding: 12px 14px;
         font-size: 0.9rem;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 }

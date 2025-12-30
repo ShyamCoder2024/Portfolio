@@ -79,6 +79,21 @@
 
 /* Mobile */
 @media (max-width: 576px) {
+    .about {
+        overflow-x: hidden;
+    }
+
+    .about-content {
+        max-width: 100%;
+        padding: 0 5px;
+    }
+
+    .about-text {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
     .about-img img {
         width: 220px;
         height: 220px;

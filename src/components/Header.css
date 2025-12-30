@@ -166,21 +166,22 @@
     .nav-menu {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 280px;
         height: 100vh;
         background: var(--card-bg);
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
-        z-index: 999;
+        z-index: 9998;
         border-left: 1px solid var(--border-color);
     }
 
     .nav-menu.active {
-        right: 0;
+        transform: translateX(0);
     }
 
     .nav-menu ul {
