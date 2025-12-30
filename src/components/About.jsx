@@ -37,15 +37,15 @@ const About = () => {
                     viewport={{ once: true }}
                 >
                     <p className="about-intro">
-                        Hi, I'm <span className="highlight-text">Shyam</span>, a passionate{' '}
-                        <span className="highlight-text">Full-Stack Developer</span> with a knack for crafting
-                        intuitive and <span className="highlight-text">high-performance web applications</span>.
+                        Hi, I'm <span className="highlight-text">Shyam</span> — a{' '}
+                        <span className="highlight-text">Full-Stack Developer</span> focused on building
+                        reliable, <span className="highlight-text">production-grade web applications</span>.
                     </p>
                     <p className="about-description">
-                        I specialize in React.js, Node.js, Express, and MongoDB, building fast, scalable,
-                        and user-focused solutions. I leverage Generative AI and modern development
-                        workflows to accelerate delivery and create production-ready applications that
-                        solve real-world problems.
+                        I work across frontend, backend, and system architecture using React, Node.js,
+                        Express, and MongoDB. My experience includes designing secure APIs, implementing
+                        authentication and real-time features, and integrating AI-driven logic to deliver
+                        scalable solutions that solve real-world problems.
                     </p>
 
                     <a href="#contact" className="btn-primary">
