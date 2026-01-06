@@ -22,7 +22,7 @@ const Projects = () => {
             ],
             tech: ['React.js', 'Node.js', 'MongoDB', 'REST APIs', 'JWT', 'AI'],
             image: scaleonImage,
-            demo: 'https://scaleon-grow-build.vercel.app/'
+            demo: 'https://scale-on-technology.vercel.app/'
         },
         {
             title: 'Meet Pune',
